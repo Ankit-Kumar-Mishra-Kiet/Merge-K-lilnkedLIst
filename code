@@ -1,0 +1,30 @@
+Node * mergeSorted(Node *a,Node *b){
+if(a==NULL)
+return b;
+if(b==NULL)
+return a;
+Node *res=NULL;
+if(a->data<=b->data)
+{
+res=a;
+res->next=mergeSorted(a->next,b);
+}
+else {
+res=b;
+res->next=mergeSorted(a,b->next);}
+return res;
+}
+
+Node * mergeKList(Node *arr[], int k)
+{
+int last=k-1;
+while(last!=0)
+[
+int i=0,j=last;
+while(i<j){
+arr[i]=mergeSorted(arr[i],arr[j]);
+i++,j--;
+if(i>j)
+last=j;}
+}
+return arr[0];}
